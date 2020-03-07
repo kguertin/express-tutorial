@@ -3,9 +3,28 @@ const path = require('path');
 
 const app = express();
 
-app.get('/api/members', (req, res) => {
-  
-})
+const members = [
+  {
+    id: 1,
+    name: 'John Doe',
+    email: 'john@gmail.com',
+    status: 'active'
+  },
+  {
+    id: 2,
+    name: 'Bob Williams',
+    email: 'bob@gmail.com',
+    status: 'inactive'
+  },
+  {
+    id: 3,
+    name: 'Shannon Jackson',
+    email: 'shannon@gmail.com',
+    status: 'active'
+  }
+];
+
+app.get('/api/members', (req, res) => res.json(members))
 
 //Set a static folder
 
