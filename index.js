@@ -1,34 +1,18 @@
 const express = require('express');
 const path = require('path');
+const logger = require('./middlewear/logger')
 
 const app = express();
 
-const members = [
-  {
-    id: 1,
-    name: 'John Doe',
-    email: 'john@gmail.com',
-    status: 'active'
-  },
-  {
-    id: 2,
-    name: 'Bob Williams',
-    email: 'bob@gmail.com',
-    status: 'inactive'
-  },
-  {
-    id: 3,
-    name: 'Shannon Jackson',
-    email: 'shannon@gmail.com',
-    status: 'active'
-  }
-];
-
-app.get('/api/members', (req, res) => res.json(members))
+//init Middlewear
+// app.use(logger)
 
 //Set a static folder
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Members routes
+app.use('/api/members', require('./routes/apis/members'));
 
 const PORT = process.env.PORT || 5000;
 
