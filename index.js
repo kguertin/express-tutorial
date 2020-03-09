@@ -7,6 +7,9 @@ const app = express();
 //init Middlewear
 // app.use(logger)
 
+// Middlewear bodyparser
+app.use();
+
 //Set a static folder
 
 app.use(express.static(path.join(__dirname, 'public')));
