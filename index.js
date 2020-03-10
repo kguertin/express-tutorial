@@ -8,7 +8,8 @@ const app = express();
 // app.use(logger)
 
 // Middlewear bodyparser
-app.use();
+app.use(express.json());
+app.use(express.urlencoded({extended: false}))
 
 //Set a static folder
 
